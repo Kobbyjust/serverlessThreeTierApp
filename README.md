@@ -1,5 +1,5 @@
 
-# Welcome to your CDK Python project!
+# A 3 Tier Serverless CDK Python project!
 
 You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`serverless_three_tier_app_stack`)
 which contains
