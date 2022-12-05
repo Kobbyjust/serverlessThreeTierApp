@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
 import aws_cdk as cdk
-
-from serverless_three_tier_app.serverless_three_tier_app_stack import ServerlessThreeTierAppStack
+#
 from presentationlayer.frontend import StaticSitePublicS3
 from presentationlayer.site_stack import StaticSiteStack
 
