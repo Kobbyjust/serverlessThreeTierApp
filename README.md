@@ -7,15 +7,14 @@ which contains
 # PRESENTATION LAYER
 1. Presentations Layer: Which contains S3 bucket configure for web hosting and attached to Cloudfront distribution
 
-# APPLICATION LAYER
+# APPLICATION AND DATABASE LAYER
 1. Application Layer: 
     1. API GATEWAY
     2. LAMBDA
     3. SQS Queue
 
-# DATABASE LAYER
-1. DATABASE Layer: 
-    Consits of a Dynamodb
+2. DATABASE LAYER
+    Contains a a NoSql database. that is a dynamodb. 
 
 
 

@@ -4,6 +4,7 @@ from aws_cdk import (
     aws_iam as iam,
     aws_apigateway as apigw,
     aws_lambda as _lambda,
+    aws_dynamodb,
     aws_lambda_event_sources as lambda_event_source,
     Aws, Stack
 ) 
@@ -66,6 +67,7 @@ class ApiSqsLambdaStack(Stack):
             method_responses=[method_response]
         ) 
 
+        
         #Creating Lambda function that will be triggered by the SQS Queue
         sqs_lambda = _lambda.Function(self,'SQSTriggerLambda',
             handler='lambda-handler.handler',
@@ -78,3 +80,19 @@ class ApiSqsLambdaStack(Stack):
 
         #Add SQS event source to the Lambda function
         sqs_lambda.add_event_source(sqs_event_source)
+
+        
+        # create dynamo table
+        my3tierserverlessdb = aws_dynamodb.Table(
+            self, "my3tierserverlessdb",
+            partition_key=aws_dynamodb.Attribute(
+                name="id",
+                type=aws_dynamodb.AttributeType.STRING
+            )
+        )
+
+         
+        sqs_lambda.add_environment("TABLE_NAME", my3tierserverlessdb.table_name)
+
+        # grant permission to lambda to write to demo table
+        my3tierserverlessdb.grant_write_data(sqs_lambda)
