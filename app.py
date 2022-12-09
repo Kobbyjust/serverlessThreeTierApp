@@ -4,6 +4,7 @@ import aws_cdk as cdk
 #
 from presentationlayer.frontend import StaticSitePublicS3
 from presentationlayer.site_stack import StaticSiteStack
+from applicationlayer.api_sqs_lambda.api_sqs_lambda_stack import ApiSqsLambdaStack
 
 app = cdk.App()
 # ServerlessThreeTierAppStack(app, "serverless-three-tier-app")
@@ -34,5 +35,7 @@ StaticSite = StaticSiteStack(
     props=props,
     description="Static Site using S3, CloudFront and Route53",
 )
+
+ApiSqsLambdaStack(app, "ApiSqsLambdaStack")
 
 app.synth()
