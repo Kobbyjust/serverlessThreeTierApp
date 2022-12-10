@@ -16,6 +16,11 @@ which contains
 2. DATABASE LAYER
     Contains a a NoSql database. that is a dynamodb. 
 
+# How to use this infrastructure
+ 1. Runing all the stacks in this aws cdk appplication will create an infrastructure as
+    in the ServerlessThreeTierApp diagram provided.
+
+ 2. Modify your React based applications to use the api endpoints created by the stack and then   upload the application to the S3 bucket created by the stack.
 
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
