@@ -21,6 +21,8 @@ which contains
     in the ServerlessThreeTierApp diagram provided.
 
  2. Modify your React based applications to use the api endpoints created by the stack and then   upload the application to the S3 bucket created by the stack.
+ You can check this link to see how to host React based app on s3 https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/deploy-a-react-based-single-page-application-to-amazon-s3-and-cloudfront.html
+ 
 
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
